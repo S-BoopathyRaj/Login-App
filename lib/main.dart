@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/home_Screen/main.dart';
 // import 'package:login_app/home_Screen/home_Screen.dart';
 import 'package:login_app/signup/signup.dart'; // Import the signup page
 import 'package:lottie/lottie.dart';
@@ -36,7 +37,7 @@ class LoginApp extends StatelessWidget {
     if (isLoggedIn) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => SignupPage()),
+        MaterialPageRoute(builder: (context) => MyApp()),
       );
     }
   }
