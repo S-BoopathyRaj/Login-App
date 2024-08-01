@@ -7,7 +7,7 @@ class Achiementpage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(
-          title: Text('History'),
+          title: Text('Achiementpage'),
           centerTitle: true,
           backgroundColor: Color.fromARGB(255, 50, 30, 233),
         ),
@@ -25,9 +25,10 @@ class Achiementpage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(
-                  '2022 ஆம் ஆண்டு தமிழ்ப் புத்தாண்டில் 22 வயது இளைஞரால் துவங்கப்பட்ட தமிழ்மண்ணின் பாரம்பரியக் கலைக் குழுவாக STEELCITY MARTIAL ART\'S of SILAMBAM என்ற பெயரில் சிறியதொரு அளவில் தன்நம்பிக்கையுடன் துவங்கப்பட்டது.\n\n'
-                  'பின் ஒரு சில மாதங்களில் K.R.D என்ற மூத்தோர்களின் பெயரை ஆசியாக கொண்டு அடுத்த கட்டநிலைக்கு காலடி தடம் படைக்க முயற்சிகள் கையான ஆயத்தமாக்கபட்டது.\n\n'
-                  'சேலம் மாவட்ட சிலம்ப நட்சத்திர வீரரும்,தலைசிறந்த ஆசானும் ஆன திரு.நடராஜ்.G அவர்களின் மூத்த மாணவன் என்ற பெரும் நம்பிக்கையுடன் திரு.சீனிவாசன் அவர்கள் சிலம்ப  கலை பயிற்சியின்தலைமை பயிற்சியாளராக ஒப்பு கொண்டார்.',
+                  '2023 ஆம் ஆண்டு பள்ளி கல்வி துறையின் சர்பாக நடை பெற்ற போட்டியில் மாணவி கனிஷ்கா,மித்ரா , முருகன் பதக்கத்தைவென்றனர் .\n\n'
+                  '2002 ஆம் ஆண்டு சேலம்  மாவட்ட சிலம்பாட்ட போட்டியில் மருத்துவ  துறையில்   பாய்லும் மானவி வர்ஷா, தாமரை செல்வி அவர்கள் வெள்ளி  பதக்கத்தை வென்றனர் .\n\n'
+                  ' 2023 ஆம் ஆண்டு ஏற்காட்டில் நடைபெற்ற Silampam Champion போட்டியில் 34 தங்க பதக்கம் 7 வெண்கல பதக்கம் வென்றனர்.\n\n'
+                  '2023 ஆம் ஆண்டுநடைபெற்ற Intra Club போட்டியில் 11   முதலிடம்,6 இரண்டாம் இடம்,2 மூன்றாம் இடம் வென்றனர்',
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                     fontSize: 18,
@@ -45,7 +46,7 @@ class Achiementpage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Histroypagenext()),
+              MaterialPageRoute(builder: (context) => Achiementpage()),
             );
           },
           backgroundColor: Colors.black,

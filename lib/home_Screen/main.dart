@@ -132,7 +132,7 @@ class _MainPageState extends State<MainPage> {
       case NavigationItem.Histroy:
         return HistoryPage();
       case NavigationItem.achievement:
-        return achievement_page();
+        return Achiementpage();
       case NavigationItem.AccountDetails:
         return AccountDetailsPage();
       default:
