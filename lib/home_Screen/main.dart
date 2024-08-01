@@ -11,7 +11,7 @@ import 'package:login_app/home_Screen/page/header_page.dart';
 // import 'package:login_app/home_Screen/page/Histroy_page.dart';
 // import 'package:login_app/home_Screen/page/ AboutUs_page.dart';
 import 'package:login_app/home_Screen/page/AccountDetailsPage.dart';
-import 'package:login_app/home_Screen/page/plugins_page.dart';
+import 'package:login_app/home_Screen/page/AchiementPage.dart';
 import 'package:login_app/home_Screen/page/HistroyPage.dart';
 import 'package:login_app/home_Screen/page/AboutUsPage.dart';
 import 'package:login_app/home_Screen/provider/navigation_provider.dart';

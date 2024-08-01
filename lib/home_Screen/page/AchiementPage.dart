@@ -9,7 +9,7 @@ class achievementPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Plugin'),
           centerTitle: true,
-          backgroundColor: Colors.red,
+         backgroundColor: Color.fromARGB(255, 50, 30, 233),
         ),
       );
 }
