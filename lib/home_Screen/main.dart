@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:login_app/Flutter_UserProfile/pages/profile_page.dart';
 import 'package:login_app/home_Screen/model/navigation_item.dart';
-import 'package:login_app/home_Screen/page/favourites_page.dart';
+
+import 'package:login_app/home_Screen/page/SettingPage.dart';
 import 'package:login_app/home_Screen/page/header_page.dart';
-import 'package:login_app/home_Screen/page/notifications_page.dart';
-import 'package:login_app/home_Screen/page/people_page.dart';
+// import 'package:login_app/home_Screen/page/AccountDetails_page.dart';
+// import 'package:login_app/home_Screen/page/Profile_page.dart';
+// import 'package:login_app/home_Screen/page/achievement_page.dart';
+// import 'package:login_app/home_Screen/page/Histroy_page.dart';
+// import 'package:login_app/home_Screen/page/ AboutUs_page.dart';
+import 'package:login_app/home_Screen/page/AccountDetailsPage.dart';
 import 'package:login_app/home_Screen/page/plugins_page.dart';
-import 'package:login_app/home_Screen/page/updates_page.dart';
-import 'package:login_app/home_Screen/page/workflow_page.dart';
+import 'package:login_app/home_Screen/page/HistroyPage.dart';
+import 'package:login_app/home_Screen/page/AboutUsPage.dart';
 import 'package:login_app/home_Screen/provider/navigation_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -46,7 +52,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(MyApp.title)),
-      drawer: buildDrawer(),
+      drawer: buildDrawer(), 
       body: buildPages(),
     );
   }
@@ -57,51 +63,51 @@ class _MainPageState extends State<MainPage> {
       child: ListView(
         children: <Widget>[
           ListTile(
-            title: Text('Header'),
+            title: Text('Profile'),
             onTap: () {
               provider.setNavigationItem(NavigationItem.header);
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: Text('People'),
+            title: Text('Histroy'),
             onTap: () {
-              provider.setNavigationItem(NavigationItem.people);
+              provider.setNavigationItem(NavigationItem.Profile);
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: Text('Favourites'),
+            title: Text('Acheivment'),
             onTap: () {
-              provider.setNavigationItem(NavigationItem.favourites);
+              provider.setNavigationItem(NavigationItem.  Setting);
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: Text('Workflow'),
+            title: Text('content'),
             onTap: () {
-              provider.setNavigationItem(NavigationItem.workflow);
+              provider.setNavigationItem(NavigationItem. AboutUs);
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: Text('Updates'),
+            title: Text('sponsuers'),
             onTap: () {
-              provider.setNavigationItem(NavigationItem.updates);
+              provider.setNavigationItem(NavigationItem.Histroy);
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: Text('Plugins'),
+            title: Text('version'),
             onTap: () {
-              provider.setNavigationItem(NavigationItem.plugins);
+              provider.setNavigationItem(NavigationItem.achievement);
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: Text('Notifications'),
+            title: Text('logout'),
             onTap: () {
-              provider.setNavigationItem(NavigationItem.notifications);
+              provider.setNavigationItem(NavigationItem.AccountDetails);
               Navigator.pop(context);
             },
           ),
@@ -117,18 +123,18 @@ class _MainPageState extends State<MainPage> {
     switch (navigationItem) {
       case NavigationItem.header:
         return HeaderPage();
-      case NavigationItem.people:
-        return PeoplePage();
-      case NavigationItem.favourites:
-        return FavouritesPage();
-      case NavigationItem.workflow:
-        return WorkflowPage();
-      case NavigationItem.updates:
-        return UpdatesPage();
-      case NavigationItem.plugins:
-        return PluginsPage();
-      case NavigationItem.notifications:
-        return NotificationsPage();
+      case NavigationItem.Profile:
+        return ProfilePage();
+      case NavigationItem.  Setting:
+        return   SettingPage();
+      case NavigationItem. AboutUs:
+        return  AboutUsPage();
+      case NavigationItem.Histroy:
+        return HistoryPage();
+      case NavigationItem.achievement:
+        return achievementPage();
+      case NavigationItem.AccountDetails:
+        return AccountDetailsPage();
       default:
         return Center(child: Text('Page not found')); // Default case for unexpected values
     }

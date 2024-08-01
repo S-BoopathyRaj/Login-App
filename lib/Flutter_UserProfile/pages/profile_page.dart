@@ -1,12 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+// import 'package:flutter_user_profile/pages/edit_description.dart';
+// import 'package:flutter_user_profile/pages/edit_email.dart';
+// import 'package:flutter_user_profile/pages/edit_image.dart';
+// import 'package:flutter_user_profile/pages/edit_name.dart';
+// import 'package:flutter_user_profile/pages/edit_phone.dart';
+import 'package:login_app/Flutter_UserProfile/pages/edit_description.dart';
+import 'package:login_app/Flutter_UserProfile/pages/edit_email.dart';
 import 'package:login_app/Flutter_UserProfile/pages/edit_image.dart';
-import 'package:login_app/Profile/pages/edit_description.dart';
-import 'package:login_app/Profile/pages/edit_email.dart';
-import 'package:login_app/Profile/pages/edit_image.dart';
-import 'package:login_app/Profile/pages/edit_name.dart';
-import 'package:login_app/Profile/pages/edit_phone.dart';
+import 'package:login_app/Flutter_UserProfile/pages/edit_name.dart';
+import 'package:login_app/Flutter_UserProfile/pages/edit_phone.dart';
 import '../user/user.dart';
 import '../widgets/display_image_widget.dart';
 import '../user/user_data.dart';

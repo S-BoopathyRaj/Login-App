@@ -72,7 +72,7 @@
               // one for the first time. Simply wait for it to activate.
               waitForActivation(reg.installing || reg.waiting);
             } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
-              // When the app updates the serviceWorkerVersion changes, so we
+              // When the app Histroy the serviceWorkerVersion changes, so we
               // need to ask the service worker to update.
               console.log('New service worker available.');
               reg.update();

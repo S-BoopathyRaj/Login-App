@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 
-class FavouritesPage extends StatelessWidget {
+class   SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(
-          title: Text('Favourites'),
+          title: Text('  Setting'),
           centerTitle: true,
           backgroundColor: Colors.red,
         ),

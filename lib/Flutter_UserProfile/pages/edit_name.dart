@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:login_app/Profile/user/user_data.dart';
-import 'package:login_app/Profile/widgets/appbar_widget.dart';
-import "package:string_validator/string_validator.dart";
+import 'package:login_app/Flutter_UserProfile/user/user_data.dart';
+import 'package:login_app/Flutter_UserProfile/widgets/appbar_widget.dart';
+import 'package:string_validator/string_validator.dart';
 // import 'package:flutter_user_profile/user/user_data.dart';
 // import 'package:flutter_user_profile/widgets/appbar_widget.dart';
 
@@ -82,9 +82,9 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                             // Handles Form Validation for Last Name
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Please enter your first name';
+                                return 'Please enter your last name';
                               } else if (!isAlpha(value)) {
-                                return 'Only letters please';
+                                return 'Only Letters Please';
                               }
                               return null;
                             },

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 
 
-class PluginsPage extends StatelessWidget {
+class achievementPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         drawer: NavigationDrawerWidget(),

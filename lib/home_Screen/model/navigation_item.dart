@@ -1,10 +1,14 @@
 enum NavigationItem {
   header,
-  people,
-  favourites,
-  workflow,
-  updates,
-  plugins,
-  notifications,
+  Profile,
+  Setting,
+  AboutUs,
+  Histroy,
+  achievement,  
+  Team,
+  AccountDetails,
+  Version,
+  Logout,
+
 
 }

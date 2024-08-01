@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 
 
-class NotificationsPage extends StatelessWidget {
+class  AboutUsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(
-          title: Text('Notifications'),
+          title: Text(' AboutUs'),
           centerTitle: true,
-          backgroundColor: Colors.indigo,
+          backgroundColor: Colors.blue,
         ),
       );
 }
