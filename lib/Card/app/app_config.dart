@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/app/repository/pokemon_repo_interface.dart';
+import 'package:login_app/Card/app/repository/pokemon_repo_interface.dart';
+// import 'package:pokemon/app/repository/pokemon_repo_interface.dart';
 
 class AppConfig extends InheritedWidget {
   final PokemonRepoInterface pokemonRepo;

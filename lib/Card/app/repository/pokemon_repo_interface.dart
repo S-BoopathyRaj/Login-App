@@ -1,4 +1,5 @@
-import 'package:pokemon/app/domain/pokemon.dart';
+import 'package:login_app/Card/app/domain/pokemon.dart';
+// import 'package:pokemon/app/domain/pokemon.dart';
 
 abstract class PokemonRepoInterface {
   void addToFavoritesList(Pokemon pokemon);

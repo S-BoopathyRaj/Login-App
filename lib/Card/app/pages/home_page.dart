@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/app/pages/all_cards_page.dart';
-import 'package:pokemon/app/pages/favorite_cards_page.dart';
-import 'package:pokemon/app/pages/obtained_cards_page.dart';
+import 'package:login_app/Card/app/pages/all_cards_page.dart';
+import 'package:login_app/Card/app/pages/favorite_cards_page.dart';
+import 'package:login_app/Card/app/pages/obtained_cards_page.dart';
+// import 'package:pokemon/app/pages/all_cards_page.dart';
+// import 'package:pokemon/app/pages/favorite_cards_page.dart';
+// import 'package:pokemon/app/pages/obtained_cards_page.dart';
 
 class HomePage extends StatefulWidget {
   final String title;

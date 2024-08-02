@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/app/pages/detail_page.dart';
-import 'package:pokemon/app/pages/home_page.dart';
+import 'package:login_app/Card/app/pages/detail_page.dart';
+import 'package:login_app/Card/app/pages/home_page.dart';
+// import 'package:pokemon/app/pages/detail_page.dart';
+// import 'package:pokemon/app/pages/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);

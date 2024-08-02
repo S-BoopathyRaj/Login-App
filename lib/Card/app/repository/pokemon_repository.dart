@@ -1,8 +1,10 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:pokemon/app/domain/pokemon.dart';
-import 'package:pokemon/app/repository/pokemon_repo_interface.dart';
+import 'package:login_app/Card/app/domain/pokemon.dart';
+import 'package:login_app/Card/app/repository/pokemon_repo_interface.dart';
+// import 'package:pokemon/app/domain/pokemon.dart';
+// import 'package:pokemon/app/repository/pokemon_repo_interface.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PokemonRepository implements PokemonRepoInterface {

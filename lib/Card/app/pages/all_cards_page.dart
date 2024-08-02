@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon/app/app_config.dart';
-import 'package:pokemon/app/domain/pokemon.dart';
-import 'package:pokemon/app/repository/pokemon_repo_interface.dart';
+import 'package:login_app/Card/app/app_config.dart';
+import 'package:login_app/Card/app/domain/pokemon.dart';
+import 'package:login_app/Card/app/repository/pokemon_repo_interface.dart';
+// import 'package:pokemon/app/app_config.dart';
+// import 'package:pokemon/app/domain/pokemon.dart';
+// import 'package:pokemon/app/repository/pokemon_repo_interface.dart';
 
 class AllCardsPage extends StatefulWidget {
 
