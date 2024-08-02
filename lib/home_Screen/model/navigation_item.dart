@@ -9,6 +9,4 @@ enum NavigationItem {
   AccountDetails,
   Version,
   Logout,
-
-
 }

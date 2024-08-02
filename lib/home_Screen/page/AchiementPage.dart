@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/home_Screen/page/AchiementNextPage.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 
 
@@ -46,13 +47,15 @@ class Achiementpage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Achiementpage()),
+              MaterialPageRoute(builder: (context) => AchievementNextPage()),
             );
           },
           backgroundColor: Colors.black,
           child: Text(
             'Next',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white,
+            
+             ),
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,

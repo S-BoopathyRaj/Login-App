@@ -11,6 +11,7 @@ import 'package:login_app/Flutter_UserProfile/pages/edit_email.dart';
 import 'package:login_app/Flutter_UserProfile/pages/edit_image.dart';
 import 'package:login_app/Flutter_UserProfile/pages/edit_name.dart';
 import 'package:login_app/Flutter_UserProfile/pages/edit_phone.dart';
+import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 import '../user/user.dart';
 import '../widgets/display_image_widget.dart';
 import '../user/user_data.dart';
@@ -27,6 +28,7 @@ class _ProfilePageState extends State<ProfilePage> {
     final user = UserData.myUser;
 
     return Scaffold(
+       drawer: NavigationDrawerWidget(),
       body: Column(
         children: [
           AppBar(

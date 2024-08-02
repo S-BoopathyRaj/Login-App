@@ -54,7 +54,7 @@
 //           user.imagePath = imageFile.path; // Assuming UserData has a property imagePath
 //         });
 //       } catch (e) {
-//         ScaffoldMessenger.of(context).showSnackBar(
+//         ScaffoldMessenger.of(context as BuildContext).showSnackBar(
 //           SnackBar(content: Text('Error picking image: $e')),
 //         );
 //       }

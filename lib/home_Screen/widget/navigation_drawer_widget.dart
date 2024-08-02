@@ -63,6 +63,13 @@ class NavigationDrawerWidget extends StatelessWidget {
                 const SizedBox(height: 16),
                 buildMenuItem(
                   context,
+                  item: NavigationItem.Team,
+                  text: 'Team',
+                  icon: Icons.group,
+                ),
+                const SizedBox(height: 16),
+                buildMenuItem(
+                  context,
                   item: NavigationItem.AccountDetails,
                   text: 'AccountDetails',
                   icon: Icons.account_balance,

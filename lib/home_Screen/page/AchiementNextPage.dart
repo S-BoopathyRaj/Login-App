@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/home_Screen/page/Achievementpage2.dart';
 
-class Achiementnextpage extends StatelessWidget {
+class AchievementNextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('History Of KRD'),
+        title: Text('Achievement Of KRD'),
         backgroundColor: Color.fromARGB(255, 50, 30, 233),
         centerTitle: true,
       ),
@@ -15,7 +16,9 @@ class Achiementnextpage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'மதிப்பிற்குரிய திரு.நடராஜ் அவர்கள் கற்று கொடுத்த சிலம்பபாடம் மட்டுமின்றி வாழ்கை பாடமும் போதித்த வாழ்வியல் முறைகளை கொண்டு தலைமை பயிற்சியாளர் திரு.சீனிவாசன் அவர்களின் வழிகாட்டுதலின் படி KRD CULTURAL GROUP தலைமை பயிற்சியாளர்,2 உதவி பயிற்சியாளர்கள் மற்றும் 1 அலுவலக நிர்வாகி கொண்டு சேலம் மத்திய பகுதியில் ஜங்ஷன் பிரதான சாலை (200m இடைவெளியில்) மதிப்பிற்குரிய சேலம் மேற்கு சட்ட மன்ற உறுப்பினர் திரு.ரா.அருள் அவர்களின் ஆசியுடன் அலுவலக வளாகத்தில் பசுமை நிறைந்த காற்றிசையுடன்கூழ்ந்த அழகிய பரப்பில் தற்பொழுது இயங்கி கொண்டு உள்ளது. இந்த தமிழ் மண்ணின் கலையை அனைவரின் மனதில் விதைக்கும் நோக்கத்தில்',
+              '2023 & 2024 ஆம் ஆண்டு INCOME TAX DEPARTMENT சார்பில் நடைபெற்ற தமிழ் கலை நிகழ்ச்சில் சிலம்ப அரங்கேற்றம்.\n\n'
+              '2023 ஆம் ஆண்டு மத்திய அரசின் குடியரசு அணி வகுப்பில் MARCH-PAST கலை பிரிவில்‌ செய்ய பட்டத்தில் சிலம்ப கலையை தேர்வு செய்து நமது வகுப்பு மாணவி கோபிகா D/O ஜென்நாதன் அவர்கள் பிரதமர்மோடி மற்றும் தமிழகவிளையாட்டு துறை அமைச்சர் திரு.உதயநிதி ஸ்டாலின் முன்னிலையில் சிறப்பு அங்கீகாரம் மற்றும் சிலம்ப அரங்கேற்றம்.\n\n'
+              '2024 ஆம் ஆண்டு நடைபெற்ற STATE LEVEL SILAMBAM: 39 போட்டியாளர்கள் நமது வகுப்பில் இருந்துகலந்து கொண்டு 25 முதலிடமும்,12 இரண்டாம் இடமும்,3 மூன்றாம்இடமும் பெற்று கோப்பை வென்று வெற்றி வாகை சூடினர்',
               style: TextStyle(
                 fontSize: 18,
                 fontFamily: 'Tamil',
@@ -26,19 +29,25 @@ class Achiementnextpage extends StatelessWidget {
               textAlign: TextAlign.justify,
             ),
             SizedBox(height: 16), // Adjust spacing as needed
-            Text(
-              'KRD GROUP\'S OF COMPANY - உரிமையாளர் திருமதி .R.தனலக்ஷ்மி',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold, // Use bold for emphasis
-                fontStyle: FontStyle.italic, // Use italic for formal tone
-                color: Colors.black, // Example color, adjust as needed
-              ),
-              textAlign: TextAlign.center, // Center align this line
-            ),
           ],
         ),
       ),
+      
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Replace with the appropriate page for navigation
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AchievementNextPage2()),
+          );
+        },
+        backgroundColor: Colors.black,
+        child: Text(
+          'Next',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

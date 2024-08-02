@@ -4,6 +4,7 @@ import 'package:login_app/Flutter_UserProfile/pages/profile_page.dart';
 import 'package:login_app/home_Screen/model/navigation_item.dart';
 
 import 'package:login_app/home_Screen/page/SettingPage.dart';
+import 'package:login_app/home_Screen/page/TeamPage.dart';
 import 'package:login_app/home_Screen/page/header_page.dart';
 // import 'package:login_app/home_Screen/page/AccountDetails_page.dart';
 // import 'package:login_app/home_Screen/page/Profile_page.dart';
@@ -15,6 +16,7 @@ import 'package:login_app/home_Screen/page/AchiementPage.dart';
 import 'package:login_app/home_Screen/page/HistroyPage.dart';
 import 'package:login_app/home_Screen/page/AboutUsPage.dart';
 import 'package:login_app/home_Screen/provider/navigation_provider.dart';
+import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 import 'package:provider/provider.dart';
 
 Future main() async {
@@ -28,7 +30,7 @@ Future main() async {
 }
 
 class MyApp extends StatelessWidget {
-  static final String title = 'Navigation Drawer';
+  static final String title = '';
 
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
@@ -51,8 +53,9 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       drawer: NavigationDrawerWidget(),
       appBar: AppBar(title: Text(MyApp.title)),
-      drawer: buildDrawer(), 
+      // drawer: buildDrawer(), 
       body: buildPages(),
     );
   }
@@ -69,48 +72,48 @@ class _MainPageState extends State<MainPage> {
               Navigator.pop(context);
             },
           ),
-          ListTile(
-            title: Text('Histroy'),
-            onTap: () {
-              provider.setNavigationItem(NavigationItem.Profile);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: Text('Acheivment'),
-            onTap: () {
-              provider.setNavigationItem(NavigationItem.  Setting);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: Text('content'),
-            onTap: () {
-              provider.setNavigationItem(NavigationItem. AboutUs);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: Text('sponsuers'),
-            onTap: () {
-              provider.setNavigationItem(NavigationItem.Histroy);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: Text('version'),
-            onTap: () {
-              provider.setNavigationItem(NavigationItem.achievement);
-              Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            title: Text('logout'),
-            onTap: () {
-              provider.setNavigationItem(NavigationItem.AccountDetails);
-              Navigator.pop(context);
-            },
-          ),
+          // ListTile(
+          //   title: Text('Histroy'),
+          //   onTap: () {
+          //     provider.setNavigationItem(NavigationItem.Profile);
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          // ListTile(
+          //   title: Text('Acheivment'),
+          //   onTap: () {
+          //     provider.setNavigationItem(NavigationItem.  Setting);
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          // ListTile(
+          //   title: Text('Team'),
+          //   onTap: () {
+          //     provider.setNavigationItem(NavigationItem. Team);
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          // ListTile(
+          //   title: Text('sponsuers'),
+          //   onTap: () {
+          //     provider.setNavigationItem(NavigationItem.Histroy);
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          // ListTile(
+          //   title: Text('version'),
+          //   onTap: () {
+          //     provider.setNavigationItem(NavigationItem.achievement);
+          //     Navigator.pop(context);
+          //   },
+          // ),
+          // ListTile(
+          //   title: Text('logout'),
+          //   onTap: () {
+          //     provider.setNavigationItem(NavigationItem.AccountDetails);
+          //     Navigator.pop(context);
+          //   },
+          // ),
         ],
       ),
     );
@@ -135,6 +138,8 @@ class _MainPageState extends State<MainPage> {
         return Achiementpage();
       case NavigationItem.AccountDetails:
         return AccountDetailsPage();
+      case NavigationItem.Team:
+        return Teampage();
       default:
         return Center(child: Text('Page not found')); // Default case for unexpected values
     }
