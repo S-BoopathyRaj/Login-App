@@ -30,3 +30,12 @@ flutter:
   uses-material-design: true
   assets:
     - assets/lottie/login2.json
+    - assets/school1.jpg
+    - assets/school2.jpg
+    - assets/school3.jpg
+    - assets/school4.jpg       
+    - assets/school5.jpg  
+    - assets/school6.jpg  
+    - assets/school7.jpg
+    - assets/school8.jpg
+    - assets/logo.png
