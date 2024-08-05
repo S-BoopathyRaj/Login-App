@@ -1,35 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
+import 'package:login_app/home_Screen/page/Explore.dart';
+import 'package:login_app/home_Screen/page/Home.dart';
+import 'package:login_app/home_Screen/page/People.dart';
 
-class SettingPage extends StatefulWidget {
-  @override
-  _SettingPageState createState() => _SettingPageState();
+void main() {
+  runApp(MyApp());
 }
 
-class _SettingPageState extends State<SettingPage> {
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      // Handle navigation to different pages
-      // For example, you might want to navigate to different screens here
-      // Navigator.push(context, MaterialPageRoute(builder: (context) => YourPage(index: index)));
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _pages = [
+      HomePage(),
+      ExplorePage(),
+      PeoplePage(),
+    ];
+
     return Scaffold(
-      drawer: NavigationDrawerWidget(),
-      appBar: AppBar(
-        title: Text('Setting'),
-        centerTitle: true,
-        backgroundColor: Colors.red,
-      ),
-      body: Center(
-        child: Text('Setting Page Content'),
-      ),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -46,7 +56,6 @@ class _SettingPageState extends State<SettingPage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.red,
         onTap: _onItemTapped,
       ),
     );

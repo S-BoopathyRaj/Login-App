@@ -6,6 +6,9 @@ import 'package:login_app/Profile/pages/edit_email.dart';
 import 'package:login_app/Profile/pages/edit_image.dart';
 import 'package:login_app/Profile/pages/edit_name.dart';
 import 'package:login_app/Profile/pages/edit_phone.dart';
+import 'package:login_app/home_Screen/page/Explore.dart';
+import 'package:login_app/home_Screen/page/Home.dart';
+import 'package:login_app/home_Screen/page/People.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 import '../user/user.dart';
 import '../widgets/display_image_widget.dart';
@@ -17,12 +20,22 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  int _selectedIndex = 0; // Track the selected index for the bottom navigation bar
+
+  // List of pages for navigation
+  final List<Widget> _pages = [
+    // Add your pages here
+    HomePage(), // Replace with your actual HomePage widget
+    ExplorePage(), // Replace with your actual ExplorePage widget
+    PeoplePage(), // Replace with your actual PeoplePage widget
+    ProfilePage(), // This page
+  ];
+
   @override
   Widget build(BuildContext context) {
     final user = UserData.myUser;
 
     return Scaffold(
-      // Use the Drawer widget directly
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: Text(
@@ -38,7 +51,6 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: Column(
         children: [
-          // Replace Padding with AppBar for consistent spacing and navigation
           InkWell(
             onTap: () {
               navigateSecondPage(EditImagePage());
@@ -54,122 +66,152 @@ class _ProfilePageState extends State<ProfilePage> {
           Expanded(
             child: buildAbout(user),
             flex: 4,
-          )
+          ),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.explore),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'People',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Color.fromRGBO(64, 105, 225, 1),
+        onTap: _onItemTapped,
       ),
     );
   }
 
-  Widget buildUserInfoDisplay(String getValue, String title, Widget editPage) => 
-    Padding(
-      padding: EdgeInsets.only(bottom: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
-            ),
-          ),
-          SizedBox(height: 1),
-          Container(
-            width: 350,
-            height: 40,
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.grey,
-                  width: 1,
-                ),
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    // Navigate to the selected page
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => _pages[index]),
+    );
+  }
+
+  Widget buildUserInfoDisplay(String getValue, String title, Widget editPage) =>
+      Padding(
+        padding: EdgeInsets.only(bottom: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
               ),
             ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      navigateSecondPage(editPage);
-                    },
-                    child: Text(
-                      getValue,
-                      style: TextStyle(fontSize: 16, height: 1.4),
-                    ),
+            SizedBox(height: 1),
+            Container(
+              width: 350,
+              height: 40,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.grey,
+                    width: 1,
                   ),
                 ),
-                Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Colors.grey,
-                  size: 40.0,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-
-  Widget buildAbout(User user) => 
-    Padding(
-      padding: EdgeInsets.only(bottom: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Tell Us About Yourself',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey,
-            ),
-          ),
-          SizedBox(height: 1),
-          Container(
-            width: 350,
-            height: 200,
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.grey,
-                  width: 1,
-                ),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () {
+                        navigateSecondPage(editPage);
+                      },
+                      child: Text(
+                        getValue,
+                        style: TextStyle(fontSize: 16, height: 1.4),
+                      ),
+                    ),
+                  ),
+                  Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Colors.grey,
+                    size: 40.0,
+                  ),
+                ],
               ),
             ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      navigateSecondPage(EditDescriptionFormPage());
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          user.aboutMeDescription,
-                          style: TextStyle(
-                            fontSize: 16,
-                            height: 1.4,
+          ],
+        ),
+      );
+
+  Widget buildAbout(User user) =>
+      Padding(
+        padding: EdgeInsets.only(bottom: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Tell Us About Yourself',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey,
+              ),
+            ),
+            SizedBox(height: 1),
+            Container(
+              width: 350,
+              height: 200,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.grey,
+                    width: 1,
+                  ),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextButton(
+                      onPressed: () {
+                        navigateSecondPage(EditDescriptionFormPage());
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.fromLTRB(0, 10, 10, 10),
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            user.aboutMeDescription,
+                            style: TextStyle(
+                              fontSize: 16,
+                              height: 1.4,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Colors.grey,
-                  size: 40.0,
-                ),
-              ],
+                  Icon(
+                    Icons.keyboard_arrow_right,
+                    color: Colors.grey,
+                    size: 40.0,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
 
   FutureOr onGoBack(dynamic value) {
     setState(() {});

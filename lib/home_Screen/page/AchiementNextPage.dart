@@ -1,7 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/page/Achievementpage2.dart';
 
-class AchievementNextPage extends StatelessWidget {
+class AchievementNextPage extends StatefulWidget {
+  @override
+  _AchievementNextPageState createState() => _AchievementNextPageState();
+}
+
+class _AchievementNextPageState extends State<AchievementNextPage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    // Navigate to different pages based on the selected index
+    // For demonstration, let's assume these are the routes
+    switch (index) {
+      case 0:
+        Navigator.pushReplacementNamed(context, '/home');
+        break;
+      case 1:
+        Navigator.pushReplacementNamed(context, '/explore');
+        break;
+      case 2:
+        Navigator.pushReplacementNamed(context, '/people');
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +58,8 @@ class AchievementNextPage extends StatelessWidget {
           ],
         ),
       ),
-      
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Replace with the appropriate page for navigation
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => AchievementNextPage2()),
@@ -48,6 +72,7 @@ class AchievementNextPage extends StatelessWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+     
     );
   }
 }

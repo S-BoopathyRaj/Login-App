@@ -1,9 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/page/HistroyPageNext.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
- // Import the nextpage class
 
-class HistoryPage extends StatelessWidget {
+class HistoryPage extends StatefulWidget {
+  @override
+  _HistoryPageState createState() => _HistoryPageState();
+}
+
+class _HistoryPageState extends State<HistoryPage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    // Navigate to the respective page based on the selected index
+    switch (index) {
+      case 0:
+        Navigator.pushReplacementNamed(context, '/home'); // Adjust the route as needed
+        break;
+      case 1:
+        Navigator.pushReplacementNamed(context, '/explore'); // Adjust the route as needed
+        break;
+      case 2:
+        Navigator.pushReplacementNamed(context, '/people'); // Adjust the route as needed
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) => Scaffold(
         drawer: NavigationDrawerWidget(),
@@ -33,9 +58,8 @@ class HistoryPage extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontFamily: 'Tamil',
-                    fontWeight:
-                        FontWeight.w400, // Adjust weight for formal look
-                    height: 1.5, // Line height for better readability
+                    fontWeight: FontWeight.w400,
+                    height: 1.5,
                   ),
                 ),
               ),
@@ -56,5 +80,24 @@ class HistoryPage extends StatelessWidget {
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.explore),
+              label: 'Explore',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.people),
+              label: 'People',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
+        ),
       );
 }

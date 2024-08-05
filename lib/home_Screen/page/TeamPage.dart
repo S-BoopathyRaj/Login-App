@@ -1,41 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 
-class Teampage extends StatelessWidget {
+class Teampage extends StatefulWidget {
+  @override
+  _TeampageState createState() => _TeampageState();
+}
+
+class _TeampageState extends State<Teampage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    // Handle navigation logic here based on the index
+    // For example, you can use Navigator.push to navigate to different pages
+    // or update the content of the page accordingly
+    switch (index) {
+      case 0:
+        // Navigate to Home page
+        break;
+      case 1:
+        // Navigate to Explore page
+        break;
+      case 2:
+        // Navigate to People page
+        break;
+    }
+  }
+
   final List<Map<String, String>> items = [
-    {
-      "image": "assets/school1.jpg", 
-      "label": "Sosnovy Bor restaurant",
-    },
-    {
-      "image": "assets/school2.jpg", 
-      "label": "Flower girl 2021",
-    },
-    {
-      "image": "assets/school3.jpg", 
-      "label": "Skopin family loves you",
-    },
-    {
-      "image": "assets/school4.jpg", 
-      "label": "Winter death",
-    },
-    
-    {
-      "image": "assets/school5.jpg", 
-      "label": "Sunny Beach",
-    },
-    {
-      "image": "assets/school6.jpg", 
-      "label": "Mountain Adventure",
-    },
-    {
-      "image": "assets/school7.jpg", 
-      "label": "City Lights",
-    },
-    {
-      "image": "assets/school8.jpg", 
-      "label": "Desert Safari",
-    },
+    {"image": "assets/school1.jpg", "label": "Sosnovy Bor restaurant"},
+    {"image": "assets/school2.jpg", "label": "Flower girl 2021"},
+    {"image": "assets/school3.jpg", "label": "Skopin family loves you"},
+    {"image": "assets/school4.jpg", "label": "Winter death"},
+    {"image": "assets/school5.jpg", "label": "Sunny Beach"},
+    {"image": "assets/school6.jpg", "label": "Mountain Adventure"},
+    {"image": "assets/school7.jpg", "label": "City Lights"},
+    {"image": "assets/school8.jpg", "label": "Desert Safari"},
   ];
 
   @override
@@ -94,6 +97,27 @@ class Teampage extends StatelessWidget {
             );
           },
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.explore),
+            label: 'Explore',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'People',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        backgroundColor: Color.fromARGB(255, 50, 30, 233),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
       ),
     );
   }
