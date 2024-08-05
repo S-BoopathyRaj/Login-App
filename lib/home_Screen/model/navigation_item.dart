@@ -5,7 +5,7 @@ enum NavigationItem {
   AboutUs,
   Histroy,
   achievement,  
-  Team,
+  Team, 
   AccountDetails,
   Version,
   Logout,
