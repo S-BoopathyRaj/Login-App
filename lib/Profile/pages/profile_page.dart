@@ -25,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
   // List of pages for navigation
   final List<Widget> _pages = [
     Homepage(),    // Replace with your actual HomePage widget
-    ExplorePage(), // Replace with your actual ExplorePage widget
+    Explorepage(), // Replace with your actual ExplorePage widget
     PeoplePage(),  // Replace with your actual PeoplePage widget
     ProfilePage(), // This page
   ];

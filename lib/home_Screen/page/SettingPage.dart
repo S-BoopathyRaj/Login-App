@@ -15,7 +15,7 @@ class _SettingPageState extends State<SettingPage> {
 
   final List<Widget> _pages = [
     Homepage(),
-    ExplorePage(),
+    Explorepage(),
     PeoplePage(),
   ];
 
