@@ -13,32 +13,64 @@ class _TeampageState extends State<Teampage> {
     setState(() {
       _selectedIndex = index;
     });
-
-    // Handle navigation logic here based on the index
-    // For example, you can use Navigator.push to navigate to different pages
-    // or update the content of the page accordingly
-    switch (index) {
-      case 0:
-        // Navigate to Home page
-        break;
-      case 1:
-        // Navigate to Explore page
-        break;
-      case 2:
-        // Navigate to People page
-        break;
-    }
   }
 
-  final List<Map<String, String>> items = [
-    {"image": "assets/school1.jpg", "label": "Sosnovy Bor restaurant"},
-    {"image": "assets/school2.jpg", "label": "Flower girl 2021"},
-    {"image": "assets/school3.jpg", "label": "Skopin family loves you"},
-    {"image": "assets/school4.jpg", "label": "Winter death"},
-    {"image": "assets/school5.jpg", "label": "Sunny Beach"},
-    {"image": "assets/school6.jpg", "label": "Mountain Adventure"},
-    {"image": "assets/school7.jpg", "label": "City Lights"},
-    {"image": "assets/school8.jpg", "label": "Desert Safari"},
+  final List<Widget> _pages = [
+    // Home Page Content
+    Center(child: Text('Home Page Content')),
+    
+    // Explore Page Content
+    Center(child: Text('Explore Page Content')),
+    
+    // People Page Content
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: 1,
+        ),
+        itemCount: 8,  // Number of items
+        itemBuilder: (context, index) {
+          return Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            elevation: 5,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(10),
+                    ),
+                    child: Image.asset(
+                      'assets/school${index + 1}.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Item ${index + 1}',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    ),
   ];
 
   @override
@@ -50,53 +82,9 @@ class _TeampageState extends State<Teampage> {
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 50, 30, 233),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            childAspectRatio: 1,
-          ),
-          itemCount: items.length,
-          itemBuilder: (context, index) {
-            return Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              elevation: 5,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(10),
-                      ),
-                      child: Image.asset(
-                        items[index]['image']!,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      items[index]['label']!,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            );
-          },
-        ),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

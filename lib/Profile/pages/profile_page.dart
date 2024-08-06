@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:login_app/Flutter_UserProfile/pages/edit_image.dart';
 import 'package:login_app/Profile/pages/edit_description.dart';
 import 'package:login_app/Profile/pages/edit_email.dart';
-import 'package:login_app/Profile/pages/edit_image.dart';
 import 'package:login_app/Profile/pages/edit_name.dart';
 import 'package:login_app/Profile/pages/edit_phone.dart';
 import 'package:login_app/home_Screen/page/Explore.dart';
 import 'package:login_app/home_Screen/page/Home.dart';
+import 'package:login_app/home_Screen/page/Homepage.dart';
 import 'package:login_app/home_Screen/page/People.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 import '../user/user.dart';
@@ -20,14 +20,13 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  int _selectedIndex = 0; // Track the selected index for the bottom navigation bar
+  int _selectedIndex = 3; // Set the default index to 3 for ProfilePage
 
   // List of pages for navigation
   final List<Widget> _pages = [
-    // Add your pages here
-    HomePage(), // Replace with your actual HomePage widget
+    Homepage(),    // Replace with your actual HomePage widget
     ExplorePage(), // Replace with your actual ExplorePage widget
-    PeoplePage(), // Replace with your actual PeoplePage widget
+    PeoplePage(),  // Replace with your actual PeoplePage widget
     ProfilePage(), // This page
   ];
 
@@ -83,6 +82,10 @@ class _ProfilePageState extends State<ProfilePage> {
             icon: Icon(Icons.people),
             label: 'People',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Color.fromRGBO(64, 105, 225, 1),
@@ -92,14 +95,15 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   void _onItemTapped(int index) {
+    if (_selectedIndex != index) { // Only navigate if the index is different
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => _pages[index]),
+      );
+    }
     setState(() {
       _selectedIndex = index;
     });
-    // Navigate to the selected page
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => _pages[index]),
-    );
   }
 
   Widget buildUserInfoDisplay(String getValue, String title, Widget editPage) =>

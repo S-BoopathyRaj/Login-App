@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/page/Explore.dart';
 import 'package:login_app/home_Screen/page/Home.dart';
+import 'package:login_app/home_Screen/page/Homepage.dart';
 import 'package:login_app/home_Screen/page/People.dart';
 
 void main() {
@@ -33,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pages = [
-      HomePage(),
+      Homepage(),
       ExplorePage(),
       PeoplePage(),
     ];

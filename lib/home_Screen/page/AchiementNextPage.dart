@@ -7,11 +7,9 @@ class AchievementNextPage extends StatefulWidget {
 }
 
 class _AchievementNextPageState extends State<AchievementNextPage> {
-  int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
     });
     // Navigate to different pages based on the selected index
     // For demonstration, let's assume these are the routes

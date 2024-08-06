@@ -1,31 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/home_Screen/page/Explore.dart';
+import 'package:login_app/home_Screen/page/Home.dart';
+import 'package:login_app/home_Screen/page/Homepage.dart';
+import 'package:login_app/home_Screen/page/People.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 
 class AboutUsPage extends StatefulWidget {
   @override
-  _AboutUsPageState createState() => _AboutUsPageState();
+  _SettingPageState createState() => _SettingPageState();
 }
 
-class _AboutUsPageState extends State<AboutUsPage> {
+class _SettingPageState extends State<AboutUsPage> {
   int _selectedIndex = 0;
 
+  final List<Widget> _pages = [
+    Homepage(),
+    ExplorePage(),
+    PeoplePage(),
+  ];
+
+  final List<String> _titles = [
+    'Home',
+    'Explore',
+    'People',
+  ];
+
   void _onItemTapped(int index) {
-    setState(() {
+    setState(() { 
       _selectedIndex = index;
     });
-
-    // You can add navigation logic here if needed, for example:
-    // switch (index) {
-    //   case 0:
-    //     Navigator.pushNamed(context, '/home');
-    //     break;
-    //   case 1:
-    //     Navigator.pushNamed(context, '/explore');
-    //     break;
-    //   case 2:
-    //     Navigator.pushNamed(context, '/people');
-    //     break;
-    // }
   }
 
   @override
@@ -33,12 +36,13 @@ class _AboutUsPageState extends State<AboutUsPage> {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        title: Text('About Us'),
+        title: Text(_titles[_selectedIndex]),
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
-      body: Center(
-        child: Text('About Us Content Here'),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

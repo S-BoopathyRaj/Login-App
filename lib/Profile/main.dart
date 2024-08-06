@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:login_app/Profile/pages/profile_page.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 
 void main() {

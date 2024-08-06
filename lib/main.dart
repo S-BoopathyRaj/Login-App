@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_app/Flutter_UserProfile/pages/profile_page.dart';
 import 'package:login_app/home_Screen/main.dart';
-import 'package:login_app/home_Screen/page/HistroyPage.dart';
-import 'package:login_app/home_Screen/page/header_page.dart';
 // import 'package:login_app/home_Screen/home_Screen.dart';
 import 'package:login_app/signup/signup.dart'; // Import the signup page
 import 'package:lottie/lottie.dart';

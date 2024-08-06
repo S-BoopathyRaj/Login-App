@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/home_Screen/page/Explore.dart';
+import 'package:login_app/home_Screen/page/Home.dart';
+import 'package:login_app/home_Screen/page/Homepage.dart';
+import 'package:login_app/home_Screen/page/People.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 
 class SettingPage extends StatefulWidget {
@@ -9,12 +13,21 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
   int _selectedIndex = 0;
 
+  final List<Widget> _pages = [
+    Homepage(),
+    ExplorePage(),
+    PeoplePage(),
+  ];
+
+  final List<String> _titles = [
+    'Home',
+    'Explore',
+    'People',
+  ];
+
   void _onItemTapped(int index) {
-    setState(() {
+    setState(() { 
       _selectedIndex = index;
-      // Handle navigation to different pages
-      // For example, you might want to navigate to different screens here
-      // Navigator.push(context, MaterialPageRoute(builder: (context) => YourPage(index: index)));
     });
   }
 
@@ -23,12 +36,13 @@ class _SettingPageState extends State<SettingPage> {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        title: Text('Setting'),
+        title: Text(_titles[_selectedIndex]),
         centerTitle: true,
         backgroundColor: Colors.red,
       ),
-      body: Center(
-        child: Text('Setting Page Content'),
+      body: IndexedStack(
+        index: _selectedIndex,
+        children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
