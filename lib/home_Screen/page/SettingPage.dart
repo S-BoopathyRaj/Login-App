@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/page/Explore.dart';
-import 'package:login_app/home_Screen/page/Home.dart';
-import 'package:login_app/home_Screen/page/Homepage.dart';
-import 'package:login_app/home_Screen/page/People.dart';
-import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
+// import 'package:login_app/home_Screen/page/Home.dart';
+// import 'package:login_app/home_Screen/page/People.dart';
 
 class SettingPage extends StatefulWidget {
   @override
@@ -14,9 +12,9 @@ class _SettingPageState extends State<SettingPage> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    Homepage(),
+    // Homepage(),
     Explorepage(),
-    PeoplePage(),
+    // PeoplePage(),
   ];
 
   final List<String> _titles = [
@@ -34,7 +32,7 @@ class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavigationDrawerWidget(),
+      // drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: Text(_titles[_selectedIndex]),
         centerTitle: true,

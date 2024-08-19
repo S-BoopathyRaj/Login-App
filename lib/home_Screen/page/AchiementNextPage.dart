@@ -7,7 +7,6 @@ class AchievementNextPage extends StatefulWidget {
 }
 
 class _AchievementNextPageState extends State<AchievementNextPage> {
-
   void _onItemTapped(int index) {
     setState(() {
     });
@@ -48,7 +47,6 @@ class _AchievementNextPageState extends State<AchievementNextPage> {
                 fontFamily: 'Tamil',
                 fontWeight: FontWeight.w400,
                 height: 1.5,
-                // wordSpacing: 2.0,
               ),
               textAlign: TextAlign.justify,
             ),
@@ -70,7 +68,7 @@ class _AchievementNextPageState extends State<AchievementNextPage> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-     
+      backgroundColor: Colors.lightBlueAccent, // Set the background color to sky blue
     );
   }
 }

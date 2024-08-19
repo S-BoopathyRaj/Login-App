@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/page/AchiementNextPage.dart';
-import 'package:login_app/home_Screen/page/Home.dart';
-import 'package:login_app/home_Screen/page/Homepage.dart'; // Assuming this is the correct one
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
-import 'package:login_app/home_Screen/page/HomePage.dart' as HomeScreen; // Use alias for HomePage
+
+
 
 class Achiementpage extends StatefulWidget {
   @override
@@ -21,7 +20,7 @@ class _AchiementpageState extends State<Achiementpage> {
       if (index == 0) {
         // Navigator.push(
         //   context,
-        //   MaterialPageRoute(builder: (context) => Homepage()), // Navigate to Homepage
+        //   MaterialPageRoute(builder: (context) => HomeScreen.()), // Navigate to Homepage
         // );
       } else if (index == 1) {
         // Add navigation logic for ExplorePage here
@@ -35,7 +34,7 @@ class _AchiementpageState extends State<Achiementpage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        drawer: NavigationDrawerWidget(),
+        // drawer: NavigationDrawerWidget()
         appBar: AppBar(
           title: Text('Achiementpage'),
           centerTitle: true,

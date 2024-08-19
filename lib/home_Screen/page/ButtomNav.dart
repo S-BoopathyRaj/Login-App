@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/home_Screen/page/Explore.dart';
-import 'package:login_app/home_Screen/page/Home.dart';
-import 'package:login_app/home_Screen/page/Homepage.dart';
-import 'package:login_app/home_Screen/page/People.dart';
+// import 'package:login_app/home_Screen/page/Home.dart';
+// import 'package:login_app/home_Screen/page/People.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,9 +33,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> _pages = [
-      Homepage(),
+      // Homepage(),
       Explorepage(),
-      PeoplePage(),
+      // PeoplePage(),
     ];
 
     return Scaffold(

@@ -13,12 +13,12 @@ class NavigationDrawerWidget extends StatelessWidget {
       color: Color.fromRGBO(50, 55, 205, 1),
       child: ListView(
         children: <Widget>[
-          buildHeader(
-            context,
-            urlImage: 'url_of_your_image_here',
-            name: 'John Doe',
-            email: 'john.doe@example.com',
-          ),
+          // buildHeader(
+          //   context,
+          //   urlImage: 'url_of_your_image_here',
+          //   name: 'John Doe',
+          //   email: 'john.doe@example.com',
+          // ),
           Container(
             padding: padding,
             child: Column(
@@ -30,20 +30,20 @@ class NavigationDrawerWidget extends StatelessWidget {
                   text: 'Profile',
                   icon: Icons.verified_user,
                 ),
-                const SizedBox(height: 16),
-                buildMenuItem(
-                  context,
-                  item: NavigationItem.  Setting,
-                  text: '  Setting',
-                  icon: Icons.favorite_border,
-                ),
-                const SizedBox(height: 16),
-                buildMenuItem(
-                  context,
-                  item: NavigationItem. AboutUs,
-                  text: ' AboutUs',
-                  icon: Icons.workspaces_outline,
-                ),
+                // const SizedBox(height: 16),
+                // buildMenuItem(
+                //   context,
+                //   item: NavigationItem.  Setting,
+                //   text: '  Setting',
+                //   icon: Icons.favorite_border,
+                // ),
+                // const SizedBox(height: 16),
+                // buildMenuItem(
+                //   context,
+                //   item: NavigationItem. AboutUs,
+                //   text: ' AboutUs',
+                //   icon: Icons.workspaces_outline,
+                // ),
                 const SizedBox(height: 16),
                 buildMenuItem(
                   context,
@@ -63,15 +63,22 @@ class NavigationDrawerWidget extends StatelessWidget {
                 const SizedBox(height: 16),
                 buildMenuItem(
                   context,
-                  item: NavigationItem.Team,
-                  text: 'Team',
+                  item: NavigationItem.School,
+                  text: 'School',
                   icon: Icons.group,
                 ),
                 const SizedBox(height: 16),
                 buildMenuItem(
                   context,
-                  item: NavigationItem.AccountDetails,
-                  text: 'AccountDetails',
+                  item: NavigationItem.Setting,
+                  text: 'Settings',
+                  icon: Icons.account_balance,
+                ),
+                const SizedBox(height: 16),
+                buildMenuItem(
+                  context,
+                  item: NavigationItem.Login,
+                  text: 'Login',
                   icon: Icons.account_balance,
                 ),
               ],

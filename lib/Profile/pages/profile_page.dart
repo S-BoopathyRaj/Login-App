@@ -6,9 +6,9 @@ import 'package:login_app/Profile/pages/edit_email.dart';
 import 'package:login_app/Profile/pages/edit_name.dart';
 import 'package:login_app/Profile/pages/edit_phone.dart';
 import 'package:login_app/home_Screen/page/Explore.dart';
-import 'package:login_app/home_Screen/page/Home.dart';
+// import 'package:login_app/home_Screen/page/Home.dart';
 import 'package:login_app/home_Screen/page/Homepage.dart';
-import 'package:login_app/home_Screen/page/People.dart';
+// import 'package:login_app/home_Screen/page/People.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 import '../user/user.dart';
 import '../widgets/display_image_widget.dart';
@@ -24,9 +24,9 @@ class _ProfilePageState extends State<ProfilePage> {
 
   // List of pages for navigation
   final List<Widget> _pages = [
-    Homepage(),    // Replace with your actual HomePage widget
+    // Homepage(),    // Replace with your actual HomePage widget
     Explorepage(), // Replace with your actual ExplorePage widget
-    PeoplePage(),  // Replace with your actual PeoplePage widget
+    // PeoplePage(),  // Replace with your actual PeoplePage widget
     ProfilePage(), // This page
   ];
 
@@ -35,7 +35,7 @@ class _ProfilePageState extends State<ProfilePage> {
     final user = UserData.myUser;
 
     return Scaffold(
-      drawer: NavigationDrawerWidget(),
+      // drawer: NavigationDrawerWidget(),
       appBar: AppBar(
         title: Text(
           'Edit Profile',

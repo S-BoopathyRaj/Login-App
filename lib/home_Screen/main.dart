@@ -2,19 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:login_app/Flutter_UserProfile/pages/profile_page.dart';
 import 'package:login_app/home_Screen/model/navigation_item.dart';
+import 'package:login_app/home_Screen/page/Homepage.dart';
+import 'package:login_app/home_Screen/page/School.dart';
 
 import 'package:login_app/home_Screen/page/SettingPage.dart';
 import 'package:login_app/home_Screen/page/TeamPage.dart';
-import 'package:login_app/home_Screen/page/header_page.dart';
-// import 'package:login_app/home_Screen/page/AccountDetails_page.dart';
-// import 'package:login_app/home_Screen/page/Profile_page.dart';
-// import 'package:login_app/home_Screen/page/achievement_page.dart';
-// import 'package:login_app/home_Screen/page/Histroy_page.dart';
-// import 'package:login_app/home_Screen/page/ AboutUs_page.dart';
-import 'package:login_app/home_Screen/page/AccountDetailsPage.dart';
+
 import 'package:login_app/home_Screen/page/AchiementPage.dart';
 import 'package:login_app/home_Screen/page/HistroyPage.dart';
-import 'package:login_app/home_Screen/page/AboutUsPage.dart';
+
 import 'package:login_app/home_Screen/provider/navigation_provider.dart';
 import 'package:login_app/home_Screen/widget/navigation_drawer_widget.dart';
 import 'package:provider/provider.dart';
@@ -53,7 +49,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       drawer: NavigationDrawerWidget(),
+      //  drawer: NavigationDrawerWidget(),
       appBar: AppBar(title: Text(MyApp.title)),
       // drawer: buildDrawer(), 
       body: buildPages(),
@@ -124,21 +120,21 @@ class _MainPageState extends State<MainPage> {
     final navigationItem = provider.navigationItem;
 
     switch (navigationItem) {
-      case NavigationItem.header:
-        return HeaderPage();
+      case NavigationItem.submit:
+        // return Homepage();
       case NavigationItem.Profile:
         return ProfilePage();
-      case NavigationItem.  Setting:
+      case NavigationItem.  Setting:  
         return   SettingPage();
-      case NavigationItem. AboutUs:
-        return  AboutUsPage();
+      // case NavigationItem. AboutUs:
+      //   return  AboutUsPage();
       case NavigationItem.Histroy:
         return HistryPage();
       case NavigationItem.achievement:
         return Achiementpage();
-      case NavigationItem.AccountDetails:
-        return AccountDetailsPage();
-      case NavigationItem.Team:
+      case NavigationItem.School:
+        return StudentLoginScreen();
+      case NavigationItem.Login:
         return Teampage();
       default:
         return Center(child: Text('Page not found')); // Default case for unexpected values

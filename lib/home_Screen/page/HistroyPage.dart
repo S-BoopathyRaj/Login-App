@@ -110,7 +110,7 @@ class _CombinedPageState extends State<HistryPage> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      _currentTitle = _pageTitles[index]; // Update the title
+      _currentTitle = _pageTitles[index]; 
     });
   }
 
@@ -119,7 +119,7 @@ class _CombinedPageState extends State<HistryPage> {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        title: Text(_currentTitle),  // Display the current title
+        title: Text(_currentTitle), 
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 50, 30, 233),
       ),
@@ -144,7 +144,7 @@ class _CombinedPageState extends State<HistryPage> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        backgroundColor: Color.fromARGB(255, 50, 30, 233),
+        backgroundColor: Color.fromARGB(255, 115, 151, 179),
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
       ),

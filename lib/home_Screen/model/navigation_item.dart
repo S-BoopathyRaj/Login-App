@@ -8,5 +8,5 @@ enum NavigationItem {
   Team, 
   AccountDetails,
   Version,
-  Logout,
+  Logout, School, Login,submit
 }
